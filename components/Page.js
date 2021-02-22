@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import Header from './Header';
 
 const GlobalStyles = createGlobalStyle`
   html {
@@ -10,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
     --white: hsl(0, 0%, 100%);
     --homepageFont: 14px;
     --detailPageFont: 16px;
+    --maxWidth: 1000px;
   }
   h1 {
     font-family: 'Nunito Sans', sans-serif;
@@ -17,11 +19,20 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
+const InnerStyles = styled.div`
+	max-width: var(--max - width);
+	margin: 0 auto;
+	padding: 0;
+`;
+
 export default function Page({ children }) {
   return (
     <div>
       <GlobalStyles />
-      {children}
+      <Header></Header>
+			<InnerStyles>
+				{children}
+			</InnerStyles>
     </div>
   )
 }
