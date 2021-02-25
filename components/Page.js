@@ -8,10 +8,10 @@ const GlobalStyles = createGlobalStyle`
     --veryDarkBlueLM: hsl(200, 15%, 8%);
     --darkGray: hsl(0, 0%, 52%);
     --veryLightGray: hsl(0, 0%, 98%);
+    --lightGray: #ededed;
     --white: hsl(0, 0%, 100%);
-    --homepageFont: 14px;
-    --detailPageFont: 16px;
     --maxWidth: 1000px;
+    
   }
   h1 {
     font-family: 'Nunito Sans', sans-serif;
