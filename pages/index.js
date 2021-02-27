@@ -1,14 +1,21 @@
-/* import Products from './compoan' */
-
 import Countries from "../components/Countries";
+import Search from '../components/Search';
+import Dropdown from '../components/Dropdown';
 
 export default function Home({data}) {
+  console.log(data);
   return (
-    <Countries data={data}></Countries>
+    <>
+      <div>
+        <Search></Search>
+        <Dropdown></Dropdown>
+      </div>
+      <Countries data={data}></Countries>
+    </>
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // Fetch data from external API
   const res = await fetch(`https://restcountries.eu/rest/v2/all`)
   const data = await res.json()
